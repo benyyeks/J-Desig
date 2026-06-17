@@ -242,13 +242,30 @@ section{position:relative;overflow:hidden;padding:clamp(80px,11vh,130px) clamp(2
 @keyframes fU{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
 
 /* ═══ ABOUT ═══ */
-.agrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;}
-.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,18px);}
-.sc{padding:clamp(20px,3vw,30px) clamp(16px,2.5vw,24px);text-align:center;
+#about .agrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,560px);gap:clamp(44px,6vw,90px);align-items:center;}
+#about .sgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,24px);width:min(100%,620px);margin:0 auto;align-items:stretch;}
+#about .sc{padding:clamp(26px,3.2vw,38px) clamp(16px,2.4vw,26px);text-align:center;
+  min-width:0;min-height:170px;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:10px;box-sizing:border-box;overflow:hidden;
   transition:transform .3s,box-shadow .3s,border-color .3s;}
-.sc:hover{transform:translateY(-6px) scale(1.02);border-color:rgba(155,89,245,.3);}
-.snum{font-family:'Syne',sans-serif;font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1;}
-.slbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:8px;letter-spacing:2px;text-transform:uppercase;}
+#about .sc:hover{transform:translateY(-6px) scale(1.02);border-color:rgba(155,89,245,.3);}
+#about .snum{font-family:'Syne',sans-serif;font-size:clamp(36px,3.8vw,58px);font-weight:800;line-height:1;
+  display:block;white-space:nowrap;}
+#about .slbl{font-size:clamp(10px,1vw,13px);color:rgba(255,255,255,.4);line-height:1.1;
+  letter-spacing:1.8px;text-transform:uppercase;white-space:nowrap;display:block;}
+@media (max-width:900px){
+  #about .agrid{grid-template-columns:1fr;}
+  #about .sgrid{width:min(100%,560px);}
+}
+@media (max-width:640px){
+  #about .sc{min-height:132px;padding:18px 12px;gap:8px;}
+  #about .snum{font-size:clamp(26px,5vw,34px);}
+  #about .slbl{font-size:9px;letter-spacing:1px;white-space:normal;}
+}
+@media (max-width:480px){
+  #about .sgrid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  #about .slbl{font-size:8px;letter-spacing:.8px;}
+}
 
 /* ═══ SERVICES ═══ */
 .svcg{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,22px);}
@@ -478,10 +495,10 @@ footer{position:relative;z-index:2;padding:clamp(20px,3vw,28px) clamp(20px,5vw,6
         <p class="bt rv d3">I specialize in branding, digital design, and visual storytelling, collaborating with small business owners, startup founders, and independent creators across Nigeria and beyond.</p>
       </div>
       <div class="sgrid">
-        <div class="sc g pg rv-s d1"><div class="snum gp-t">3+</div><br/><div class="slbl">Years Active</div></div>
-        <div class="sc g pgg rv-s d2"><div class="snum gg-t">50+</div><br/><div class="slbl">Projects Done</div></div>
-        <div class="sc g pgg rv-s d3"><div class="snum gg-t">100%</div><br/><div class="slbl">Purpose-Led</div></div>
-        <div class="sc g pg rv-s d4"><div class="snum gp-t">&#8734;</div><br/><div class="slbl">Creative Drive</div></div>
+        <div class="sc g pg rv-s d1"><span class="snum gp-t">3+</span><span class="slbl">Years Active</span></div>
+        <div class="sc g pgg rv-s d2"><span class="snum gg-t">50+</span><span class="slbl">Projects Done</span></div>
+        <div class="sc g pgg rv-s d3"><span class="snum gg-t">100%</span><span class="slbl">Purpose-Led</span></div>
+        <div class="sc g pg rv-s d4"><span class="snum gp-t">&#8734;</span><span class="slbl">Creative Drive</span></div>
       </div>
     </div>
   </div>
